@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container col-md-8 border border-success rounded mt-5">
+      <h1 class="text-center text-primary">Student registration form</h1>
+      <table class="table">
+        <%if(record.length>0){%> <%record.forEach(function(row){%>
+        <tbody>
+          <tr>
+            <th>Profile Image:</th>
+
+            <td>
+              <img
+                src="/uploads/<%=row.profile%>"
+                alt="img"
+                style="width: 100px; height: 100px;"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th>FirstName:</th>
+
+            <td><%=row.fname%></td>
+          </tr>
+
+          <tr>
+            <th>LastName:</th>
+
+            <td><%=row.lname%></td>
+          </tr>
+          <tr>
+            <th>Address:</th>
+
+            <td><%=row.address%></td>
+          </tr>
+          <tr>
+            <th>Class:</th>
+
+            <td><%=row.class%></td>
+          </tr>
+          <tr>
+            <th>Marks:</th>
+
+            <td><%=row.marks%></td>
+          </tr>
+        </tbody>
+        <a href="/"
+          ><button type="submit" class="btn btn-success">Back</button></a
+        >
+        <%})}%>
+      </table>
+    </div>
+  </body>
+</html>
